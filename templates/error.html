@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+  <title>Error</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #7f1d1d, #1f2937, #000000);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  </style>
+</head>
+<body class="text-white min-h-screen flex items-center justify-center px-6">
+
+  <div class="w-full max-w-2xl bg-white bg-opacity-5 backdrop-blur-md border border-white border-opacity-10 rounded-2xl shadow-2xl p-10 text-center space-y-6">
+    <h1 class="text-4xl font-extrabold tracking-wide"> Something Went Wrong</h1>
+    <p class="text-lg text-red-200">{{ error_message }}</p>
+    
+    <a href="/"
+       class="inline-block bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white px-6 py-2 rounded-lg font-semibold shadow-md transition">
+       Back to Home
+    </a>
+  </div>
+
+</body>
+</html>

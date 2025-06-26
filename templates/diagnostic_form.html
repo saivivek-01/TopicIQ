@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+  <title>Topic-Based Diagnostic</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #0f172a, #1f2937, #000000);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  </style>
+</head>
+<body class="text-white min-h-screen flex items-center justify-center px-4 py-10">
+
+  <div class="w-full max-w-xl bg-white bg-opacity-5 backdrop-blur-md border border-white border-opacity-10 rounded-2xl shadow-2xl p-10 space-y-6 text-center">
+    <h2 class="text-3xl font-extrabold tracking-wide"> Topic-Based Diagnostic Test</h2>
+
+    <form method="POST" action="/run-diagnostic" class="space-y-5">
+      <input type="hidden" name="origin" value="{{ origin }}">
+      
+      <input type="text"
+             name="topic"
+             placeholder="Enter a topic (e.g., Photosynthesis, AI, Gravity)..."
+             required
+             class="w-full px-4 py-3 rounded-lg text-black text-base focus:outline-none focus:ring-2 focus:ring-green-400" />
+      
+      <button type="submit"
+              class="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-400 hover:to-emerald-500 px-6 py-3 rounded-lg font-semibold shadow-md transition">
+         Run Diagnostic
+      </button>
+    </form>
+
+    <a href="/student-dashboard"
+       class="block text-sm text-blue-400 hover:underline mt-4 transition">
+       Back to Dashboard
+    </a>
+  </div>
+
+</body>
+</html>

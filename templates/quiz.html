@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+  <title>Generated Quiz</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #111827, #1f2937, #000000);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  </style>
+</head>
+<body class="text-white min-h-screen flex flex-col justify-center items-center p-6">
+
+  <h2 class="text-4xl font-extrabold mb-6 tracking-wide"> Generated Quiz</h2>
+
+  <div class="bg-white bg-opacity-5 backdrop-blur-md border border-white border-opacity-10 rounded-xl p-6 shadow-xl w-full max-w-3xl overflow-x-auto">
+    <pre class="whitespace-pre-wrap text-green-100 text-sm">{{ quiz }}</pre>
+  </div>
+
+  <a href="/" class="mt-8 bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-500 hover:to-indigo-600 px-6 py-2 rounded-lg font-semibold text-white shadow-md transition-all duration-200">
+     Back to Home
+  </a>
+
+</body>
+</html>

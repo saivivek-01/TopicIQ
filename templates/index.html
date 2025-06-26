@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+  <title> TopicIQ </title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #0f172a, #1f2937, #000000);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  </style>
+</head>
+<body class="text-white min-h-screen flex items-center justify-center px-6">
+
+  <div class="w-full max-w-4xl bg-white bg-opacity-5 backdrop-blur-md border border-white border-opacity-10 rounded-2xl shadow-2xl p-12 sm:p-14 text-center space-y-8">
+
+    
+    <h1 class="text-5xl font-extrabold tracking-wide"> TopicIQ</h1>
+    <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
+      AI-powered personalized learning with Google Classroom integration
+    </p>
+
+    
+    <div class="flex flex-wrap justify-center gap-6">
+      <a href="/login"
+         class="bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-500 hover:to-indigo-600 px-6 py-3 rounded-lg font-semibold text-white shadow-lg transition text-base">
+         <img src="/static/google.png" alt="Google logo" class="w-7 h-7 inline mr-2" >Login with Google
+      </a>
+      <a href="/diagnostic?from=/"
+         class="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-400 hover:to-emerald-500 px-6 py-3 rounded-lg font-semibold text-white shadow-lg transition text-base">
+         Start Diagnostic Test
+      </a>
+      <a href="/educator-dashboard"
+         class="bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-300 hover:to-yellow-400 px-6 py-3 rounded-lg font-semibold text-white shadow-lg transition text-base">
+         Performance Dashboard
+      </a>
+    </div>
+
+  </div>
+
+</body>
+</html>

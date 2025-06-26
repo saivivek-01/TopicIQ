@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+  <title>Login Successful</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #0f172a, #1f2937, #000000);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  </style>
+</head>
+<body class="text-white flex flex-col items-center justify-center min-h-screen px-6">
+
+  <div class="bg-white bg-opacity-5 backdrop-blur-md border border-white border-opacity-10 rounded-2xl p-8 shadow-lg text-center max-w-md w-full">
+    <h1 class="text-4xl font-extrabold mb-4 tracking-wide"> Login Successful</h1>
+    <p class="mb-6 text-lg">Welcome, <span class="text-green-300 font-semibold">{{ name }}</span>. You are now logged in.</p>
+    <a href="/student-dashboard"
+       class="inline-block bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-400 hover:to-emerald-500 text-white px-6 py-2 rounded-lg font-semibold shadow-md transition duration-200">
+       Go to Dashboard
+    </a>
+  </div>
+
+</body>
+</html>
