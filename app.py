@@ -157,7 +157,7 @@ def login():
                 'https://www.googleapis.com/auth/userinfo.profile',
                 'https://www.googleapis.com/auth/userinfo.email',
                 'openid'],
-        redirect_uri='http://localhost:5000/callback'
+        redirect_uri='https://topiciq.begetter.me/callback'
     )
     auth_url, _ = flow.authorization_url(prompt='consent')
     return redirect(auth_url)
@@ -172,7 +172,7 @@ def callback():
             'https://www.googleapis.com/auth/userinfo.email',
             'openid'
         ],
-        redirect_uri='http://localhost:5000/callback'
+        redirect_uri='https://topiciq.begetter.me/callback'
     )
     flow.fetch_token(authorization_response=request.url)
 
