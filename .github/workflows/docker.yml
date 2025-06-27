@@ -1,4 +1,4 @@
-name: Deploy TopicIQ App
+name: Build and Deploy TopicIQ
 
 on:
   push:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout repo
         uses: actions/checkout@v3
 
       - name: Log in to Docker Hub
@@ -19,10 +19,12 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build and Push Docker image
-        run: |
-          docker build -t begetter/topiciq:latest .
-          docker push begetter/topiciq:latest
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: begetter/topiciq:latest
 
       - name: Deploy to DigitalOcean Droplet
         uses: appleboy/ssh-action@master
@@ -31,4 +33,10 @@ jobs:
           username: ${{ secrets.DO_DROPLET_USER }}
           key: ${{ secrets.DO_DROPLET_KEY }}
           script: |
-            bash ~/deploy_topiciq.sh
+            docker pull begetter/topiciq:latest
+            docker stop topiciq-container || true
+            docker rm topiciq-container || true
+            docker run -d --name topiciq-container \
+              -p 5000:5000 \
+              --env-file /root/.env \
+              begetter/topiciq:latest
