@@ -12,7 +12,9 @@ import google.oauth2.credentials
 
 app = Flask(__name__)
 app.secret_key = 'super_secret_key'
+from werkzeug.middleware.proxy_fix import ProxyFix
 
+app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
 '''@app.route('/')
 def index():
     return render_template('index.html')'''
