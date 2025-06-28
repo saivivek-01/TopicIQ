@@ -15,3 +15,5 @@ __pycache__/
 # Ignore deployment keys or credentials
 *.pem
 *.key
+# ignore the file contain droplet acces token
+terraform/terraform.tfvars
